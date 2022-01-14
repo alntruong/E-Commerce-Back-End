@@ -2,6 +2,9 @@ require('dotenv').config()
 
 const Sequelize = require('sequelize')
 
-const sequelize = new Sequelize(process.env.JAWSDB_URL ? process.env.JAWSDB_URL : process.env.LOCALDB_URL)
+const sequelize = new Sequelize('ecommerce_db', 'root', 'rootroot', {
+ host: 'localhost',
+ dialect: 'mysql' /* Choose one of'mysql' |'mariadb' |'postgres' |'mssql'*/
+});
 
 module.exports = sequelize
